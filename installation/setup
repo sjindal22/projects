@@ -1,0 +1,35 @@
+# Install python3-pip:
+
+sudo apt-get update
+python3 --version
+sudo apt-get install -y python3-pip
+
+# Can upgrade python3-pip version, if prompted:
+
+sudo apt-get upgrade python3-pip
+
+# Test for successfull installation of a package. 
+
+pip3 install numpy
+
+# Install other packages and development tool for a robust programming environment.
+
+sudo apt-get install build-essential libssl-dev libffi-dev python3-dev
+
+# Setup virtual enviornment now
+# Virtual environments let you have an isolated space on your server for Python projects, ensuring that 
+# each of your projects can have its own set of dependencies that won’t disrupt any of your other project
+# The process begins with installing venv module, part of standard Python library.
+
+sudo apt-get install python3-venv
+
+# Make sirectory where you want to create your environment. For instance:
+
+mkdir environment
+cd environment/
+
+# Once you are in the directory, create virtual environment by running following command: 
+
+pyvenv virtenv
+
+# pyvenv sets up a new directory that contains a few items which we can view with the ls command, having files such as bin, include, lib, lib64, pyvenv.cfg, share.
