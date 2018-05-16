@@ -69,5 +69,4 @@ pyvenv virtenv
 9. pip install -r ~/virtual-env/requirements.txt
 
 #You can/should deactivate your virtual enviorment when done.
-#Be mindful of the name of the file. 
 10. deactivate
