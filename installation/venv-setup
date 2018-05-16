@@ -33,3 +33,38 @@ cd environment/
 pyvenv virtenv
 
 # pyvenv sets up a new directory that contains a few items which we can view with the ls command, having files such as bin, include, lib, lib64, pyvenv.cfg, share.
+
+#For MAC OS:
+
+#Check for pip package on your system
+1. pip --version
+
+2. sudo easy_install pip or pip install --upgrade pip (if you don't have it)
+
+#Test your installation
+3. pip install numpy 
+ 
+#TIP: pip search <module_name>, will show you all the related packages.
+4. pip install virtualenv
+
+5. cd <directory where you have your project>
+
+#You are now setting up a virtual environment for the project.
+#This will also create a subdirectory named "venv".
+#You can choose whatever meaningful name your want.
+6. virtualenv venv
+
+#Activate your vritual environment now. 
+7. source venv/bin/activate
+
+#Requirements file lets you pin down packages with/without versions, you want your 
+#environment to have installed before running your script. 
+8. vim requirements.txt 
+
+#Strongly recommended to run the requirement.txt file before running your script.
+#Be mindful of the name of the file. 
+9. pip install -r requirements.txt
+
+#You can/should deactivate your virtual enviorment when done.
+#Be mindful of the name of the file. 
+10. deactivate
