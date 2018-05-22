@@ -1,0 +1,7 @@
+Every command that runs on shell returns an exit status.
+This status ranges from 0-255.
+If the command ran without any errors, it will return a 0 status.
+Otherwise a non-zero status. 
+
+echo "$?" - Contains error code of a previously executed command.
+
