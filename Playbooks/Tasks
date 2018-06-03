@@ -1,0 +1,16 @@
+To ping all hosts:
+Here -m --> module
+
+1. Pings all hosts:
+ansible -m ping all
+
+2. Runs ad hoc command using "command" module 
+ansible -m command -a "hostname" all
+
+is same as
+
+ansible -a "hostname" all
+
+3. Link for module index:
+http://docs.ansible.com/ansible/latest/modules_by_category.html
+

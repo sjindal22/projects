@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install apache2
+      apt: name={{item}} state=present update_cache=yes
+      with_items:
+        - apache2
+        - python-pip
+        - python-virtualenv

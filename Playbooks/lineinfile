@@ -1,0 +1,20 @@
+---
+- hosts: loadbalancer
+  become: true
+  tasks: 
+    - name: verify nginx service
+      command: service nginx status
+      
+    - name: verify nginx is listening on port 80
+      wait_for: port=80 timeout=1
+
+    - name: ensure mysql is listening on all the ports.
+      lineinfile: dest=/etc/mysql/my.cnf regexp=^bind-address line=“bind-address = 0.0.0.0” 
+      notify: restart mysql
+      
+- hosts: webserver
+  become: true
+  tasks:
+    - name: verify apache2 service
+      command: service mysql service
+      

@@ -1,0 +1,31 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install apache2
+      apt: name={{item}} state=present update_cache=yes
+      with_items:
+        - apache2
+        - python-pip
+        - python-virtualenv
+        
+    - name: ensure apache2 started
+      service: name=apache2 state=started enabled=yes
+
+
+    - name: ensure mod_wsgi enabled
+      apache2_module: name=wsgi state=present
+      notify: restart apache2
+      
+  handlers
+    - name: restart apache2
+      service: name=apache2 state=restarted
+    
+
+Notes: 
+
+service handler: special type of task that handles the execution of a service/command based on a condition being met.
+
+Here newly installed mod_wsgi to take place in effect, needs apache2 to be restarted. If the module is already running, apache2 needn't be restarted.
+
+Therefore, "notify" will run "handler" only when there is any change to mod_wsi, it being a restart of mod_wsgi or installation.

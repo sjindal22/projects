@@ -1,0 +1,35 @@
+---
+- hosts: loadbalancer
+  become: true
+  tasks: 
+    - name: verify nginx service
+      command: service nginx status
+      
+    - name: verify nginx is listening on port 80
+      wait_for: port=80 timeout=1
+      
+- hosts: webserver
+  become: true
+  tasks:
+    - name: verify apache2 service
+      command: service mysql service
+      
+      
+---
+
+- hosts: loadbalancer
+  become: true
+  tasks: 
+    - name: verify nginx service
+      service: name=nginx status=stopped
+      wait_for: port=80 state=drained
+      
+    - name: verify nginx is listening on port 80
+      wait_for: port=80 timeout=1
+      
+- hosts: webserver
+  become: true
+  tasks:
+    - name: verify apache2 service
+      service: name=mysql state=started
+      

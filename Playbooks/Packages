@@ -1,0 +1,35 @@
+Example: 
+
+---
+ - hosts: personal-gateways
+   become: true
+   tasks:
+     - name: Install mysql server
+       apt: name=mysql-server update_cache=yes state=present
+
+---
+  - hosts: all
+    become: true
+    tasks:
+      - name: Install nginx
+        apt: name=nginx state=present update_cache=yes
+
+Notes:
+
+state=present: Installs package, if package doesn't exist
+
+state=latest: To install latest version, every time playbook runs
+
+state=absent: Delete package if it is installed
+
+update_cache: apt-get update
+
+become: escalates privilege to sudo
+
+Framework for ansible is:
+
+---
+ - hosts: all
+   tasks:
+     - name of task:
+       module_name: 

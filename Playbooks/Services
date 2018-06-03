@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: ensure ngix started
+      service: name=nginx status=started enabled=yes
+      
+      
+      
+state=started: looks at state of the service and starts it 
+state=restarted: stops and start it again
+state=stopped: stops the service
+state=reload
+    
+enabled=yes: configuration flag for determining on  starting service at start-up
+
+1. curl lb01

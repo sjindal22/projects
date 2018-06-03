@@ -1,0 +1,15 @@
+You can extract specific information from
+inventory file by using certain pattens.
+Some of the examples are as follows:
+
+1. ansible --list-hosts production-gateways  ---> lists all hosts with "production-gateways" as the group name
+
+2. ansible --list-hosts *10.83.* ---> lists hosts starting with 10.83.*.*
+
+3. ansible --list-hosts production-gateways:peronsal-gateways  ---> lists hosts under both the group names.
+
+4. ansible --list-hosts \!peronal-gateways ---> lists all hosts "not" under production-gateways group name.
+
+5. ansible --list-hosts production-gateways[0:4] ---> lists hosts from index 0 t0 4
+
+6. 

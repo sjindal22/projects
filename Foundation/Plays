@@ -1,0 +1,16 @@
+Running ansible ad-hoc commands are useful in live troubleshooting. But the real power is writing down tasks and managing hosts, which is achieved by writing playbook. It is of yaml type. Yaml is a simple markup language.
+
+hostname.yaml
+
+Three hyphens is a standard yams opening, contains list of plays. Each item in the list, starts with hyphen and there are two keys, one is hosts which sets target and second key is tasks, which is a list again. 
+
+---
+ - hosts: all
+   tasks:
+     - name: get server hostname 
+       command: hostname 
+
+---
+ - hosts: all
+   tasks: 
+     - command: hostname

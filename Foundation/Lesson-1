@@ -1,0 +1,9 @@
+Ansible Documentation
+
+List all hosts in a file:  ansible -i hosts --limit-hosts all
+Global ansible config file: /etc/ansible/ansible.cfg
+
+You can create a local ansible.cfg file with default values in it.
+This would let you list all hosts in the inventory without having to specify it everytime, while running ansible command. This is one such 
+example of using local config file.
+
