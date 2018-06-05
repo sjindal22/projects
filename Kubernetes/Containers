@@ -1,0 +1,45 @@
+Virtual Machine vs Containers
+
+Virtual Machine consists of:
+1. Server.
+2. Physical Machine
+3. Host OS
+4. Hypervisor (manage guest OS to have multiple OS on one host)
+5. Guest OS
+6. binaries and libraries
+7. app A, app B, app C
+
+Virtual machine with multiple guest OS is usually pretty
+heavy, with each OS having its own libraries and binaries,
+and also takes time to boot up. It needs to go through the
+whole boot cycle for OS to be up and running.
+
+On the contrary, Containers have the following:
+1. Physical Server
+2. Host OS
+3. Docker Engine (bins, libs) allows to have multiple
+containers.
+4. app A, app B, app C
+
+Advantage: Launching containers does not require whole Guest
+OS to boot up and wouldn't take minutes to load.
+
+About Docker:
+
+Docker is the most popular container software.
+It is an alternative to rocket (rkt) - which also
+works with Kubernetes.
+
+Docker Engine, it is a docker runtime; a software to
+make build/run docker images.
+
+Docker Hub: online service to store and fetch docker
+images. Allows you to build docker images online. This
+helps in building docker images on hub instead of on PC.
+
+Docker benefits:
+1. Isolation: you can ship a binary with all the dependencies.
+2. Closer parity between dev, QA and production environment.
+3. Docker makes development teams able to ship images faster.
+4. You can run same docker mage, unchanged, on laptops,
+data center, VMs, and cloud providers.

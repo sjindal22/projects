@@ -1,0 +1,47 @@
+Minikube is a tool that makes it easy to run Kubernetes
+locally. Minikube runs a single-node Kubernetes cluster
+inside a VM on your laptop for users looking to try out
+Kubernetes or develop with it day-to-day.
+
+1. Install minikube:
+curl -Lo minikube https://storage.googleapis.com/minikube/releases
+/latest/minikube-linux-amd64 && chmod +x minikube &&
+sudo mv minikube /usr/local/bin/
+
+2. Install kubectl:
+curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/
+release/v1.9.4/bin/linux/amd64/kubectl &&
+chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+
+3. minikube start - This will start your kubernetes cluster on your local host.
+The above step would have also configured ~/.kube/config file with the IP
+address and port number used by kubectl for connecting our VM to Kubernetes.
+
+4. curl -O https://storage.googleapis.com/kubernetes-release/release/v1.8.4/bin/darwin/amd64/kubectl 
+Downloads kubectl tools and kubectl will know the IP address and port in config
+file, that it needs to use that to connect to the cluster. 
+
+5. kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
+I am pulling down "hello-minikube" image from somewhere and put it on port 8080
+
+6. kubectl expose deployment hello-minikube --type=NodePort 
+Expose 8080 port to the host machine. 
+
+7.minikube service hello-minikube --url 
+
+8. kubectl get service hello-minikube
+
+9. minikube stop - stops the kubernetes cluster
+
+---------------
+
+While kubectl is best for working with single node container on local machine,
+this is not a scalable option. For this reason, kops is used for spinning up 
+production cluster.  
+
+3. Install Virtualbox:
+sudo pat-get install Virtualbox
+
+4. Install docker:
+sudo apt-get install docker
+sudo apt install docker.io

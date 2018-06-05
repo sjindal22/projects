@@ -1,0 +1,28 @@
+Kubernetes is an open source orchestration system for Docker containers.
+
+a. Lets you schedule containers on a cluster of machines.
+b. You can run multiple containers on one machine.
+c. You can run long running services (like web applications).
+d. Kubernetes will manage the state of these containers.
+
+   1. Can start on a specific node.
+   2. Will restart a container when it gets killed.
+   3. Can move containers from one node to the another node.
+
+Instead of running a few docker containers on one host manually,
+Kubernetes is a platform that will manage the containers for you.
+
+Some other popular docker orchestrators are:
+1. Docker Swarm (isn't as extensive as Kubernetes)
+2. Mesos
+
+Advantages of kubernetes:
+a. You can run Kubernetes anywhere:
+   1. On-premises (own datacenter)
+   2. Public (Google cloud, AWS)
+   3. hybrid; public and private
+
+b. Highly modular (You can make changes when necessary)
+c. Open source
+d. Great community
+e. Backed by Google
