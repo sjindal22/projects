@@ -33,6 +33,8 @@ Expose 8080 port to the host machine.
 
 9. minikube stop - stops the kubernetes cluster
 
+10. KOPS is a tool for setting up/installing kubernetes on aws, for running production cluster.
+It is used for production grade Kubernetes installations, upgrade and management. 
 ---------------
 
 While kubectl is best for working with single node container on local machine,

@@ -1,0 +1,27 @@
+1. Download vagrant and virtual box.
+
+2. cd ubuntu/
+
+3. vagrant init ubuntu/xenial64 - initialize ubuntu xenial distribution
+
+4. vagrant up - use virtual box to set ubuntu xenial box.
+
+5. vagrant ssh
+
+6. wget https://github.com/kubernetes/kops/releases/download/1.9.1/kops-linux-amd64
+
+7. chmod +x kops-linux-amd64
+
+8. sudo mv kops-linux-amd64 /usr/local/bin
+
+9, sudo apt-get install software-properties-common
+
+10. sudo apt-add-repository universe
+
+11. sudo apt-get update
+
+12. sudo apt-get install python-pip
+
+13. sudo pip install awscli
+
+14. 
